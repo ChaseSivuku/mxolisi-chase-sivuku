@@ -7,6 +7,7 @@ import resumePdf from "@/assets/Mxolisi Sivuku Resume PDF.pdf"
 
 export function HeroSection() {
   const [greeting, setGreeting] = useState("")
+  const [showName, setShowName] = useState(false)
   const fullGreeting = "Hello, I'm"
 
   useEffect(() => {
@@ -17,6 +18,10 @@ export function HeroSection() {
         index++
       } else {
         clearInterval(timer)
+        // After greeting completes, wait a moment then show name
+        setTimeout(() => {
+          setShowName(true)
+        }, 300)
       }
     }, 100)
     return () => clearInterval(timer)
@@ -30,9 +35,18 @@ export function HeroSection() {
           <div className="order-1 lg:order-1">
             <p className="text-primary text-lg mb-8 h-7">
               {greeting}
-              <span className="animate-pulse">|</span>
+              {greeting.length === fullGreeting.length ? null : <span className="animate-pulse">|</span>}
             </p>
-            <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6 text-balance">Mxolisi Chase Sivuku</h1>
+            <h1 
+              className={cn(
+                "text-5xl md:text-7xl font-bold text-foreground mb-6 text-balance transition-all duration-1000 ease-out",
+                showName 
+                  ? "opacity-100 translate-y-0" 
+                  : "opacity-0 translate-y-4"
+              )}
+            >
+              Mxolisi Chase Sivuku
+            </h1>
             <h2 className="text-xl md:text-2xl text-primary font-medium mb-6">Full Stack Developer</h2>
             <p className="text-muted-foreground text-lg leading-relaxed max-w-2xl mb-10">
               I build reliable, user-focused web systems that balance clean design with solid engineering. 
