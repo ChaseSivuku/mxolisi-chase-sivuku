@@ -3,6 +3,7 @@ import { Menu, X, Download } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import logoImage from "@/assets/logo-text-bg-Photoroom.png"
+import resumePdf from "@/assets/Mxolisi Sivuku Resume PDF.pdf"
 
 const navLinks = [
   { href: "#home", label: "Home" },
@@ -53,9 +54,11 @@ export function Navigation() {
                 {link.label}
               </a>
             ))}
-            <Button size="sm" className="gap-2">
-              <Download className="h-4 w-4" />
-              Download CV
+            <Button size="sm" className="gap-2" asChild>
+              <a href={resumePdf} download="Mxolisi Sivuku Resume.pdf">
+                <Download className="h-4 w-4" />
+                Download CV
+              </a>
             </Button>
           </div>
 
@@ -83,9 +86,11 @@ export function Navigation() {
                   {link.label}
                 </a>
               ))}
-              <Button size="sm" className="gap-2 w-fit">
-                <Download className="h-4 w-4" />
-                Download CV
+              <Button size="sm" className="gap-2 w-fit" asChild>
+                <a href={resumePdf} download="Mxolisi Sivuku Resume.pdf">
+                  <Download className="h-4 w-4" />
+                  Download CV
+                </a>
               </Button>
             </div>
           </div>

@@ -1,5 +1,5 @@
-import { Github, Linkedin, Instagram, Mail } from "lucide-react"
-import logoImage from "@/assets/logo-text-bg-Photoroom.png"
+import { Github, Linkedin, Instagram, Mail } from "lucide-react";
+import logoImage from "@/assets/logo-text-bg-Photoroom.png";
 
 const quickLinks = [
   { href: "#home", label: "Home" },
@@ -7,14 +7,22 @@ const quickLinks = [
   { href: "#skills", label: "Skills" },
   { href: "#projects", label: "Projects" },
   { href: "#contact", label: "Contact" },
-]
+];
 
 const socialLinks = [
-  { icon: Github, href: "https://github.com", label: "GitHub" },
-  { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-  { icon: Instagram, href: "https://instagram.com", label: "Instagram" },
+  { icon: Github, href: "https://github.com/ChaseSivuku", label: "GitHub" },
+  {
+    icon: Linkedin,
+    href: "https://www.linkedin.com/in/mxolisi-sivuku-b27a1b186",
+    label: "LinkedIn",
+  },
+  {
+    icon: Instagram,
+    href: "https://www.instagram.com/chase_sivuku",
+    label: "Instagram",
+  },
   { icon: Mail, href: "mailto:mxolisi.sivuku@gmail.com", label: "Email" },
-]
+];
 
 export function Footer() {
   return (
@@ -24,14 +32,11 @@ export function Footer() {
           {/* Brand */}
           <div>
             <a href="#home" className="flex items-center">
-              <img 
-                src={logoImage} 
-                alt="Logo" 
-                className="h-24 w-auto"
-              />
+              <img src={logoImage} alt="Logo" className="h-24 w-auto" />
             </a>
             <p className="text-muted-foreground mt-2 text-sm">
-              Full Stack Developer crafting beautiful, accessible digital experiences.
+              Full Stack Developer crafting beautiful, accessible digital
+              experiences.
             </p>
           </div>
 
@@ -78,5 +83,5 @@ export function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }
