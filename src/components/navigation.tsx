@@ -75,23 +75,28 @@ export function Navigation() {
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
           <div className="md:hidden mt-4 pb-4 border-t border-border pt-4">
-            <div className="flex flex-col gap-4">
-              {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {link.label}
-                </a>
-              ))}
-              <Button size="sm" className="gap-2 w-fit" asChild>
-                <a href={resumePdf} download="Mxolisi Sivuku Resume.pdf">
-                  <Download className="h-4 w-4" />
-                  Download CV
-                </a>
-              </Button>
+            <div className={cn(
+              "bg-card/95 backdrop-blur-md rounded-lg border border-border",
+              "shadow-lg shadow-primary/5 p-4"
+            )}>
+              <div className="flex flex-col gap-4">
+                {navLinks.map((link) => (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    className="text-muted-foreground hover:text-primary transition-colors py-2 px-3 rounded-md hover:bg-secondary/50"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {link.label}
+                  </a>
+                ))}
+                <Button size="sm" className="gap-2 w-fit mt-2" asChild>
+                  <a href={resumePdf} download="Mxolisi Sivuku Resume.pdf">
+                    <Download className="h-4 w-4" />
+                    Download CV
+                  </a>
+                </Button>
+              </div>
             </div>
           </div>
         )}

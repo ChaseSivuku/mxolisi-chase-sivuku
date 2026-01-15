@@ -23,12 +23,12 @@ export function HeroSection() {
   }, [])
 
   return (
-    <section id="home" className="min-h-screen flex flex-col justify-center px-6 pt-20 relative">
+    <section id="home" className="min-h-screen flex flex-col justify-center px-6 pt-32 md:pt-20 relative">
       <div className="max-w-6xl mx-auto w-full">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
-          <div className="order-2 lg:order-1">
-            <p className="text-primary text-lg mb-4 h-7">
+          <div className="order-1 lg:order-1">
+            <p className="text-primary text-lg mb-8 h-7">
               {greeting}
               <span className="animate-pulse">|</span>
             </p>
@@ -40,7 +40,8 @@ export function HeroSection() {
               solutions that not only look good but are built for performance, scalability, and 
               real-world functionality.
             </p>
-            <div className="flex flex-wrap gap-4">
+            {/* Buttons - hidden on mobile, shown on desktop */}
+            <div className="hidden lg:flex flex-wrap gap-4">
               <Button size="lg" asChild>
                 <a href="#projects" className="gap-2">
                   <FolderOpen className="h-5 w-5" />
@@ -57,7 +58,7 @@ export function HeroSection() {
           </div>
 
           {/* Profile Image */}
-          <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
+          <div className="order-2 lg:order-2 flex justify-center lg:justify-end">
             <div className="relative w-full max-w-md">
               <div className={cn(
                 "absolute inset-0 bg-primary/20 rounded-2xl blur-3xl",
@@ -77,6 +78,22 @@ export function HeroSection() {
                 />
               </div>
             </div>
+          </div>
+
+          {/* Buttons - shown on mobile below image, hidden on desktop */}
+          <div className="order-3 lg:hidden flex flex-row gap-4 justify-center items-center w-full">
+            <Button size="lg" asChild className="flex-1 max-w-[200px]">
+              <a href="#projects" className="gap-2">
+                <FolderOpen className="h-5 w-5" />
+                View Projects
+              </a>
+            </Button>
+            <Button size="lg" variant="outline" className="gap-2 bg-transparent flex-1 max-w-[200px]" asChild>
+              <a href={resumePdf} download="Mxolisi Sivuku Resume.pdf">
+                <Download className="h-5 w-5" />
+                Download CV
+              </a>
+            </Button>
           </div>
         </div>
 
